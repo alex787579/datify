@@ -2,6 +2,47 @@ import React from 'react';
 import './DefaultPage.css'; // Assuming you move styles to this CSS file
 // E:\dating-react\datify\src\common\DefaultPage.css
 const DefaultPage = React.memo(() => {
+
+    const styles = {
+
+        button: {
+            margin: '0 10px',
+            padding: '5px 20px',
+            border: 'none',
+            borderRadius: '30px',
+            fontSize: '1rem',
+            cursor: 'pointer',
+            transition: 'transform 0.4s, background-color 0.3s',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+        },
+        buttonPrimary: {
+            backgroundColor: '#ff5a5f',
+            color: '#fff',
+        },
+        buttonOutline: {
+            backgroundColor: 'transparent',
+            border: '2px solid white',
+            color: '#fff',
+        },
+        '@keyframes fadeIn': {
+            from: { opacity: 0 },
+            to: { opacity: 1 },
+        },
+        '@keyframes float': {
+            '0%, 100%': { transform: 'translateY(-10px)' },
+            '50%': { transform: 'translateY(10px)' },
+        },
+    };
+
+
+    const applyHoverEffect = (e, hoverStyles) => {
+        Object.assign(e.target.style, hoverStyles);
+    };
+
+    const removeHoverEffect = (e, originalStyles) => {
+        Object.assign(e.target.style, originalStyles);
+    };
+
     return (
         <div>
             {/* Fixed Login Button */}
@@ -9,13 +50,17 @@ const DefaultPage = React.memo(() => {
                 Login
             </a>
 
-            {/* Hero Section */}
             <div className="hero">
                 <div className="container">
                     <h1>Welcome to Datify</h1>
-                    <p>Find your perfect match today!</p>
-                    <a href="/signup" className="btn btn-danger btn-lg">Join Now</a>
-                    <a href="/matches" className="btn btn-outline-light btn-lg">Learn More</a>
+                    <p>Real Connections, No Games – Find Your Perfect Match Today!</p>
+                    <button
+                    style={{ ...styles.button, ...styles.buttonPrimary }}
+                    onMouseEnter={(e) => applyHoverEffect(e, { transform: 'scale(1.1)' })}
+                    onMouseLeave={(e) => removeHoverEffect(e, styles.buttonPrimary)}
+                >
+                    Join Now
+                </button>
                 </div>
             </div>
 
@@ -50,7 +95,7 @@ const DefaultPage = React.memo(() => {
             </div>
 
             {/* Testimonials Section */}
-            <div className="container testimonials text-center my-5">
+            {/* <div className="container testimonials text-center my-5">
                 <h2>What Our Users Say</h2>
                 <div className="row">
                     {testimonialsData.map((testimonial, index) => (
@@ -62,7 +107,7 @@ const DefaultPage = React.memo(() => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
             {/* Call to Action Section */}
             {/* <div className="container text-center my-5">

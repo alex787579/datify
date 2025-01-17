@@ -11,6 +11,7 @@ const Register = () => {
   const [dobYear, setDobYear] = useState('');
   const [gender, setGender] = useState('');
   const [interestedIn, setInterestedIn] = useState('');
+  const [lookingFor, setLookingFor] = useState(''); // New state for "Looking For"
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ const Register = () => {
     const dob = `${dobYear}-${dobMonth}-${dobDay}`;
 
     // Simple validation
-    if (!name || !email || !password || !dobDay || !dobMonth || !dobYear || !gender || !interestedIn) {
+    if (!name || !email || !password || !dobDay || !dobMonth || !dobYear || !gender || !interestedIn || !lookingFor) {
       setErrorMessage('All fields are required.');
       return;
     }
@@ -33,6 +34,7 @@ const Register = () => {
       dob,
       gender,
       interestedIn,
+      lookingFor,
     });
 
     // Redirect to another page after successful form submission
@@ -163,6 +165,26 @@ const Register = () => {
               <option value="Women">Women</option>
               <option value="Men">Men</option>
               <option value="Men & Women">Men & Women</option>
+            </select>
+          </div>
+
+          {/* Looking For Section */}
+          <div className="mb-3">
+            <label htmlFor="lookingFor" className="form-label button-text-color">Looking For</label>
+            <select
+              className="form-control form-border-color"
+              id="lookingFor"
+              value={lookingFor}
+              onChange={(e) => setLookingFor(e.target.value)}
+              required
+            >
+              <option value="">Select Option</option>
+              <option value="Short term fun">Short term fun</option>
+              <option value="Long term partner">Long term partner</option>
+              <option value="New friend">New friend</option>
+              <option value="Still figuring it out">Still figuring it out</option>
+              <option value="Short-term open to long">Short-term open to long</option>
+              <option value="Long-term open to short">Long-term open to short</option>
             </select>
           </div>
 

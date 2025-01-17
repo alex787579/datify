@@ -14,7 +14,9 @@ import Profile from './profiles/Profile';
 import ProfileView from './profiles/ProfileView';
 import PageNotFound from './common/PageNotFound';
 import UserProfile from './profiles/UserProfile';
-
+import UserProfileView from './components/UserProfileView';
+import EditProfile from './profiles/EditProfile';
+import Setting from './Setting';
 const App = () => {
   return (
     <Router>
@@ -24,15 +26,16 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/setting" element={<Setting />} />
 
         {/* Public Routes */}
-        <Route path="/visitors" element={<Visitors />} />
+        {/* <Route path="/visitors" element={<Visitors />} /> */}
         <Route path="/chats" element={<Chats />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/online" element={<Online />} />
         <Route path="/likes" element={<Likes />} />
-        <Route path="/profile" element={<ProfileView />} />
-        <Route path="/editprofile" element={<Profile />} />
+        <Route path="/profile" element={<UserProfileView />} />
+        <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/user-profile/:userId" element={<UserProfile />} />
 
         <Route path="*" element={<PageNotFound />} />

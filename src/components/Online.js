@@ -23,7 +23,7 @@ const Online = () => {
   }, []);
 
   return (
-    <div className="container-xxl position-relative bg-white d-flex p-0">
+    <div className="container-xxl position-relative d-flex p-0">
       <Sidebar />
       <div className="content">
         <Navbars />

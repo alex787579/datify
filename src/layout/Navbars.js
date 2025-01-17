@@ -41,10 +41,10 @@ const Navbars = () => {
               </span>
             </a>
             <div className="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-              <a href="/profile" className="dropdown-item">
+              <a href="/editprofile" className="dropdown-item">
                 My Profile
               </a>
-              <a href="/profile" className="dropdown-item">
+              <a href="/setting" className="dropdown-item">
                 Settings
               </a>
               <a href="#" className="dropdown-item" onClick={handleLogout}>Log Out</a> {/* Logout */}

@@ -10,7 +10,7 @@ const Sidebar = () => {
           Datify
         </h3>
       </a>
-      <div className="d-flex align-items-center ms-4 mb-4">
+      {/* <div className="d-flex align-items-center ms-4 mb-4">
         <div className="position-relative">
           <img
             className="rounded-circle"
@@ -24,7 +24,7 @@ const Sidebar = () => {
           <h6 className="mb-0">Jhon</h6>
           <span>Admin</span>
         </div>
-      </div>
+      </div> */}
       <div className="navbar-nav w-100">
       <a href="/matches" className="nav-item nav-link active">
       <i className="fa fa-users me-2" />  {/* Dashboard Icon */}
@@ -43,13 +43,13 @@ const Sidebar = () => {
       Likes You
     </a>
     <a href="/messages" className="nav-item nav-link">
-      <i className="fa fa-envelope me-2" /> {/* Messages Icon */}
-      Messages
+      <i className="fa fa-comments me-2" /> {/* Messages Icon */}
+      Chat
     </a>
-    <a href="/visitors" className="nav-item nav-link">
-      <i className="fa fa-user-friends me-2" /> {/* Visitors Icon */}
+    {/* <a href="/visitors" className="nav-item nav-link">
+      <i className="fa fa-user-friends me-2" />
       Visitors
-    </a>
+    </a> */}
       {/* <a href="/dashboard" className="nav-item nav-link active">
           <i className="fa fa-tachometer-alt me-2" />
           Matches
